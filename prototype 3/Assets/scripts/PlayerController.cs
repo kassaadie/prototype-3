@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 { private Rigidbody playerRb;
+    public float jumpForce;
+    public float gravityModifier;
+    public bool isOnGround = true;
+    private Animtor playerAnim;
     // Start is called before the first frame update
     void Start()
     {
-        plyerRb
+        playerRb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
+        Physics.gravity *= gravityModifier;}
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() {
+
     {
-        
-    }
-}
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gamover) { 
+        playerRb.AddForce(Vector3.up * 10 jumpForce, ForceMode.Impulse);
+        isOnGround = false; } }
+        playerAnim.SetTrigger("Jump_trig"):}}
+    }    
+
+     private void OnCollisionEnter(Collision collision) {
+      isOnGround = true; }
