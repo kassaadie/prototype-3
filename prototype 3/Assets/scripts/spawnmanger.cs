@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnmanger : MonoBehaviour
-{   private PlayerController playerControllerScript
+{   private Vector3 spawnPos = new Vector3(25, 0 0);
+	public GameObject obstaclePrefab;
+	private float startDelay = 2;
+	private float repeatRate = 2;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -16,7 +20,7 @@ public class spawnmanger : MonoBehaviour
 void Update()
 {
 	if (playerControllerScript.gameOver == false) {
-		Instantiate(obstaclePrefab, spawnPos, obstaclePrefab, obstaclePrefab.transfrom.rotation):} }
+		Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transfrom.rotation):} }
      
         
     }
